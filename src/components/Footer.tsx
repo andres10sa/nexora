@@ -16,7 +16,7 @@ export function Footer() {
         <address>
           <p>{address.street}</p>
           <p>{address.city}, {address.region}, {address.country}</p>
-          <p><a href={SITE.phoneHref}>{SITE.phoneDisplay}</a></p>
+          <p>{SITE.phoneDisplay}</p>
           <p><a href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
         </address>
         <nav aria-label="Información legal">

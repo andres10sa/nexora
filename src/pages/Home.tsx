@@ -97,7 +97,7 @@ export function Home() {
           <p className="lead reveal">Escríbenos y conversamos sobre tu proyecto, sin compromiso.</p>
           <div className="reveal"><ContactButtons onDark /></div>
           <dl className="contact-list reveal">
-            <div><dt>WhatsApp y teléfono</dt><dd><a href={SITE.phoneHref}>{SITE.phoneDisplay}</a></dd></div>
+            <div><dt>WhatsApp y teléfono</dt><dd>{SITE.phoneDisplay} · <a href={SITE.whatsappHref} target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a></dd></div>
             <div><dt>Correo</dt><dd><a href={`mailto:${SITE.email}`}>{SITE.email}</a></dd></div>
             <div><dt>Dirección</dt><dd>{SITE.address.street}, {SITE.address.city}, {SITE.address.region}, {SITE.address.country}</dd></div>
           </dl>

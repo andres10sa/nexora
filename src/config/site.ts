@@ -4,8 +4,7 @@ export const SITE = {
   url: __SITE_URL__,
   email: 'camand10sa@gmail.com',
   phoneDisplay: '+57 301 318 4491',
-  phoneHref: 'tel:+573013184491',
-  whatsappHref: 'https://wa.me/573013184491',
+  whatsappHref: `https://wa.me/573013184491?text=${encodeURIComponent('Hola, quiero información sobre los servicios de Nexora')}`,
   address: {
     street: 'Calle 7 # 3-119 Sur',
     city: 'Facatativá',
