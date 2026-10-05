@@ -43,20 +43,22 @@ Antes de tener dominio puedes probar con la URL `nexora.pages.dev`, pero entonce
 
 Datos verificados en la documentación oficial de Cloudflare y Hostinger en octubre de 2026. Los menús cambian con frecuencia: si un nombre no coincide, busca el equivalente.
 
-### 1. Comprar el dominio en Hostinger (solo el dominio)
+### 1. Registrar el dominio en Cloudflare Registrar (al costo)
 
-1. Entra a hostinger.com → **Domains** → busca el nombre y confirma que sale disponible.
-2. Añade al carrito solo el dominio. Rechaza hosting, correo, constructor de sitios u otros extras que ofrezca.
-3. Revisa que la protección de privacidad WHOIS quede incluida (suele ser gratis) y desactiva la renovación automática solo si prefieres renovar a mano.
-4. Paga. (No pude confirmar en la documentación de Hostinger el orden exacto de estas pantallas; sigue lo que muestre el carrito y rechaza todo lo que no sea el dominio.)
+Precio: Cloudflare cobra sin margen el precio del registro más la tarifa de ICANN. Su documentación no publica la cifra de un .com; fuentes de terceros indican unos 10,46 USD/año (10,26 de Verisign + 0,20 de ICANN), con alza prevista de Verisign a 10,97 desde el 1 de noviembre de 2026 (unos 11,17 USD en total). Confirma el precio final en la pantalla de compra.
 
-### 2. Pasar el DNS a Cloudflare
+1. Cloudflare → crea la cuenta y **verifica tu correo** (es obligatorio para registrar).
+2. Panel → **Domain Registration → Register Domains**, busca el nombre y confirma que sale disponible.
+3. **Purchase** → elige el plazo (1 año) → completa los contactos (registrante, administrativo, técnico y facturación): nombre y apellido, correo, teléfono con código de país (+57) y dirección completa, solo caracteres ASCII, sin tildes ni eñes. Usa los datos reales de Camilo Andrés Sánchez Sandoval.
+4. Elige el método de pago, acepta el acuerdo de registro → **Complete purchase**. Termina en unos 30 segundos y llega un correo de confirmación.
+5. La renovación automática viene activada (reintenta desde unos 30 días antes del vencimiento; no está garantizada si falla el cobro). La redacción de WHOIS oculta tus datos cuando el registro lo permite. Mantén una tarjeta válida.
+6. Opcional: activa DNSSEC en la página de gestión del dominio.
 
-1. Cloudflare → **Onboard a domain** → escribe el dominio → plan **Free**.
-2. Revisa los registros DNS que detecte. Debe quedar vacío o solo lo que necesites.
-3. Cloudflare muestra dos nameservers (por ejemplo `xxx.ns.cloudflare.com`). Cópialos exactos.
-4. Hostinger → **DNS** (barra lateral) → tu dominio → pestaña **DNS / Nameservers** → **Change Nameservers** → **Change nameservers** → pega los dos de Cloudflare → **Save**. Si tienes DNSSEC activo en Hostinger, desactívalo antes.
-5. Espera de unos minutos a 24 horas. Comprueba con `dig ns tudominio.com @1.1.1.1`. Cloudflare avisa por correo cuando el dominio queda activo.
+Como el dominio queda en Cloudflare, el DNS ya está en Cloudflare: **no hay que cambiar nameservers ni pasar el DNS**. Salta al paso 3.
+
+### 2. (No aplica) Cambio de nameservers
+
+Solo haría falta si el dominio estuviera en otro registrador (por ejemplo Hostinger).
 
 ### 3. Conectar el dominio a Pages
 
@@ -84,7 +86,7 @@ Meta Business Suite → **Configuración** → **Seguridad de la marca** → **D
 
 ### 6. Quién hace qué
 
-- **Tú:** compra del dominio, cuenta de Cloudflare, `wrangler login`, cambio de nameservers, registros y reglas en paneles, verificación en Meta.
+- **Tú:** compra del dominio en Cloudflare, `wrangler login`, registros y reglas en paneles, verificación en Meta.
 - **Claude (cuando le des el dominio):** actualizar `SITE_URL`, regenerar el sitio, comprobar canónicos, sitemap, Open Graph y JSON-LD, y desplegar solo cuando lo pidas.
 
 ## Pendientes antes de publicar
