@@ -26,6 +26,9 @@ export function Seo({ title, description, path }: SeoProps) {
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />
       <meta name="twitter:card" content="summary_large_image" />
+      {__META_DOMAIN_VERIFICATION__ && (
+        <meta name="facebook-domain-verification" content={__META_DOMAIN_VERIFICATION__} />
+      )}
     </Head>
   );
 }

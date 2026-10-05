@@ -32,7 +32,12 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), seoFiles(siteUrl)],
-    define: { __SITE_URL__: JSON.stringify(siteUrl) },
+    define: {
+      __SITE_URL__: JSON.stringify(siteUrl),
+      __META_DOMAIN_VERIFICATION__: JSON.stringify(
+        (process.env.META_DOMAIN_VERIFICATION ?? env.META_DOMAIN_VERIFICATION ?? '').trim(),
+      ),
+    },
     ssgOptions: { dirStyle: 'nested', formatting: 'none' },
   };
 });

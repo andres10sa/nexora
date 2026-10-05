@@ -1,0 +1,5 @@
+# Configuración de Cloudflare Pages. Sin claves: el token va en la variable
+# de entorno CLOUDFLARE_API_TOKEN, nunca en este archivo.
+name = "nexora"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
