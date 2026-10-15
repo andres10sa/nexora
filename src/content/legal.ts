@@ -1,7 +1,7 @@
 // NOTE FOR REVIEW: these texts are a careful draft, not legal advice.
 // A Colombian lawyer must review them before the site is used for Meta verification
 // or for any commercial relationship (Ley 1581 de 2012, Decreto 1074 de 2015).
-import { SITE } from '../config/site';
+import { LEGAL_IDENTITY, SITE } from '../config/site';
 
 export interface LegalSection {
   heading: string;
@@ -31,7 +31,7 @@ export const PRIVACY: LegalDocument = {
       heading: 'Responsable del tratamiento',
       items: [
         `Nombre comercial: ${SITE.name}`,
-        `Responsable: ${SITE.legalName}, persona natural`,
+        `Responsable: ${LEGAL_IDENTITY}`,
         `Dirección: ${ADDRESS}`,
         `Correo electrónico: ${SITE.email}`,
         `Teléfono y WhatsApp: ${SITE.phoneDisplay}`,
@@ -64,7 +64,7 @@ export const PRIVACY: LegalDocument = {
     {
       heading: 'Terceros y transferencias',
       paragraphs: [
-        'Para atender tus mensajes usamos servicios de terceros, como el correo electrónico y WhatsApp, y para alojar este sitio usamos Cloudflare. Estos proveedores tratan información conforme a sus propias políticas de privacidad.',
+        'Para atender tus mensajes usamos servicios de terceros, como el correo electrónico y WhatsApp, y para alojar este sitio usamos Vercel. Estos proveedores tratan información conforme a sus propias políticas de privacidad.',
         'No cedemos tus datos a terceros para fines comerciales. Solo los compartimos cuando una autoridad competente lo exija o cuando sea necesario para prestar el servicio que solicitaste.',
       ],
     },
@@ -113,7 +113,7 @@ export const TERMS: LegalDocument = {
     {
       heading: 'Quién ofrece este sitio',
       paragraphs: [
-        `${SITE.name} es un nombre comercial de ${SITE.legalName}, persona natural, con domicilio en ${ADDRESS}. Puedes escribirnos a ${SITE.email}.`,
+        `${SITE.name} es un nombre comercial de ${LEGAL_IDENTITY}, con domicilio en ${ADDRESS}. Puedes escribirnos a ${SITE.email}.`,
       ],
     },
     {
@@ -158,6 +158,62 @@ export const TERMS: LegalDocument = {
       heading: 'Cambios, ley aplicable y jurisdicción',
       paragraphs: [
         'Podemos modificar estos términos en cualquier momento; la versión vigente es la publicada en esta página. Se rigen por las leyes de la República de Colombia, y cualquier controversia se someterá a las autoridades colombianas competentes.',
+      ],
+    },
+  ],
+};
+
+export const PAYMENTS: LegalDocument = {
+  title: 'Pagos, cancelaciones y reembolsos',
+  description: 'Cómo se pagan, cancelan y reembolsan los servicios de desarrollo de software de Nexora.',
+  updated: '15 de octubre de 2026',
+  intro: `Esta política explica las condiciones de pago, cancelación y reembolso de los servicios que presta ${SITE.name}, nombre comercial de ${LEGAL_IDENTITY}. Nexora presta servicios digitales: no vende ni envía productos físicos.`,
+  sections: [
+    {
+      heading: 'Propuesta y precio',
+      paragraphs: [
+        'Antes de iniciar cualquier trabajo enviamos una propuesta escrita con el alcance, el precio en pesos colombianos, el cronograma y la forma de pago. El trabajo empieza solo cuando aceptas la propuesta por escrito.',
+      ],
+    },
+    {
+      heading: 'Medios de pago',
+      paragraphs: [
+        'Los pagos se hacen por transferencia bancaria u otros medios indicados en la propuesta. No recibimos pagos en este sitio web ni guardamos datos de tarjetas. Por cada pago entregamos el soporte o la factura correspondiente.',
+      ],
+    },
+    {
+      heading: 'Anticipo y pagos por etapas',
+      paragraphs: [
+        'Según el proyecto, la propuesta puede pedir un anticipo para iniciar y pagos contra la entrega de cada etapa. Los porcentajes y las fechas quedan definidos en la propuesta aceptada.',
+      ],
+    },
+    {
+      heading: 'Cancelación por parte del cliente',
+      paragraphs: [
+        'Puedes cancelar el servicio en cualquier momento avisando por escrito a nuestro correo o WhatsApp.',
+      ],
+      items: [
+        'Si cancelas antes de que empiece el trabajo, te devolvemos el 100 % de lo pagado.',
+        'Si cancelas con el trabajo en curso, te devolvemos lo pagado menos el valor del trabajo ya realizado, y te entregamos lo desarrollado hasta ese momento.',
+        'Los costos pagados a terceros a tu nombre, como dominios, licencias o servicios de alojamiento, no son reembolsables.',
+      ],
+    },
+    {
+      heading: 'Incumplimiento de nuestra parte',
+      paragraphs: [
+        'Si no entregamos lo acordado en la propuesta, primero lo corregimos sin costo. Si no podemos corregirlo, te devolvemos el valor de la parte no entregada.',
+      ],
+    },
+    {
+      heading: 'Derecho de retracto',
+      paragraphs: [
+        'Cuando aplique el derecho de retracto del artículo 47 de la Ley 1480 de 2011, puedes ejercerlo dentro de los cinco (5) días hábiles siguientes a la contratación, siempre que el servicio no haya empezado a prestarse con tu acuerdo.',
+      ],
+    },
+    {
+      heading: 'Cómo solicitar un reembolso',
+      paragraphs: [
+        `Escríbenos a ${SITE.email} o por WhatsApp al ${SITE.phoneDisplay} con tu nombre, el proyecto y el motivo. Respondemos en un máximo de quince (15) días hábiles y, si el reembolso procede, lo pagamos por transferencia dentro de los treinta (30) días calendario siguientes.`,
       ],
     },
   ],

@@ -1,6 +1,8 @@
 export const SITE = {
   name: 'Nexora',
   legalName: 'Camilo Andrés Sánchez Sandoval',
+  // NIT exactly as it appears on the RUT, e.g. '1.234.567.890-1'. Hidden while empty.
+  nit: '',
   url: __SITE_URL__,
   email: 'nexoraequipo@gmail.com',
   phoneDisplay: '+57 301 318 4491',
@@ -16,5 +18,7 @@ export const SITE = {
   description:
     'Nexora es un estudio de desarrollo de software en Facatativá, Colombia: páginas web y PWA, sistemas de gestión a la medida y automatización con IA y WhatsApp.',
 } as const;
+
+export const LEGAL_IDENTITY = `${SITE.legalName}, persona natural${SITE.nit ? `, NIT ${SITE.nit}` : ''}`;
 
 export const absoluteUrl = (path: string) => `${SITE.url}${path === '/' ? '/' : path}`;

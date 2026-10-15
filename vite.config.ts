@@ -1,7 +1,7 @@
 import { defineConfig, loadEnv, type Plugin } from 'vite';
 import react from '@vitejs/plugin-react';
 
-const PAGES = ['/', '/privacidad', '/terminos'];
+const PAGES = ['/', '/privacidad', '/terminos', '/pagos-y-reembolsos'];
 
 const normalizeUrl = (value: string) => value.replace(/\/+$/, '');
 

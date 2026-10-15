@@ -1,4 +1,4 @@
-import { SITE } from '../config/site';
+import { LEGAL_IDENTITY, SITE } from '../config/site';
 import { Logo } from './Logo';
 
 export function Footer() {
@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="footer-legal">
-            {SITE.name} es un empresa de desarrollo de software.
+            {SITE.name} es el nombre comercial de {LEGAL_IDENTITY}, estudio de desarrollo de software.
           </p>
         </div>
         <address>
@@ -22,6 +22,7 @@ export function Footer() {
         <nav aria-label="Información legal">
           <a href="/privacidad">Política de privacidad</a>
           <a href="/terminos">Términos de uso</a>
+          <a href="/pagos-y-reembolsos">Pagos y reembolsos</a>
         </nav>
       </div>
       <div className="container footer-bottom">
