@@ -10,7 +10,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="footer-legal">
-            {SITE.name} es un nombre comercial de {SITE.legalName}, persona natural.
+            {SITE.name} es un nombre comercial de {SITE.legalName}, persona natural...
           </p>
         </div>
         <address>
